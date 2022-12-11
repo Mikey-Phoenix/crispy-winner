@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HG Empire</title>
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/productWindow.css">
+    <link rel="shortcut icon" href="./hg_favicon/favicon-16x16.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/35b2c289c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="sub-nav">
+        <img src="./hg_favicon/LOGO.jpg" alt="" class="icon">
+        <div class="gender-selection filter">
+            <div class="showing">
+                <div class="selection-item" onclick="option(0)">All</div>
+            </div>
+            <div class="not-showing">
+                <div class="selection-item">Men</div>
+                <div class="selection-item">Women</div>
+                <div class="selection-item">Boys</div>
+                <div class="selection-item">Girls</div>
+            </div>
+        </div>
+        <div class="search">
+            <input type="search" name="" id="search-bar" placeholder="Search items">
+            <label for="search-bar"><i class="fas fa-search"></i></label>
+        </div>
+        <div class="color-selection filter">
+            <div class="showing">
+                <div class="selection-item" onclick="option(1)">All</div>
+            </div>
+            <div class="not-showing">
+                <div class="selection-item">White</div>
+                <div class="selection-item">Black</div>
+                <div class="selection-item">Off-white</div>
+            </div>
+        </div>
+        <div class="last-icon">
+            <div class="last-inner" onclick="fashionChoice()">
+                <div class="slide">
+                    <div class="not-showing">
+                        <span><img src="./hg_favicon/button-shirts-logo-removebg-preview.png" alt="" width="20px" height="20px">   Shirts</span>
+                        <span><img src="./hg_favicon/shoe-icon-2-removebg-preview.png" alt="" width="20px" height="20px">   Shoes</span>
+                    </div>
+                    <div class="showing">
+                        <span><i class="fa-solid fa-shirt"></i>   T-Shirts</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <i class="fa-solid fa-cart-shopping cart-icon"></i>
+            <i class="far fa-heart"></i>
+        </div>
+    </nav>
+
+
+
+    <main>
+        <div class="productViewContainer">
+            <div class="imageHolder">
+                <!-- <img src="./imgs/img1.jpg" alt=""> -->
+            </div>
+            <button>Add To Cart</button>
+            <div class="innerCont">
+                <div class="words">
+                    <h2>Name</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam nobis unde a inventore dolorum, amet dolorem, optio est enim, ab accusantium? In quaerat odio nulla unde autem ea. Pariatur, quis!</p>
+                    <div>
+                        <del>#<span>1000</span></del>
+                        <p>#<span>999.99</span></p>
+                    </div>
+                </div>
+                <div class="options">
+                    <div class="option">
+                        <img src="./imgs/shoe-icon-2.png" alt="">
+                        <div class="cast">
+                            <div class="circlular"></div>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <img src="./imgs/shoe-icon-2.png" alt="">
+                        <div class="cast">
+                            <div class="circlular"></div>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <img src="./imgs/shoe-icon-2.png" alt="">
+                        <div class="cast">
+                            <div class="circlular"></div>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <img src="./imgs/shoe-icon-2.png" alt="">
+                        <div class="cast">
+                            <div class="circlular"></div>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <img src="./imgs/shoe-icon-2.png" alt="">
+                        <div class="cast">
+                            <div class="circlular"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cartSide">
+            <h2>Your Cart</h2>
+            <div class="totalCont">
+                <div>Amount: # <span>20000</span></div>
+                <div><span>6</span> items in cart</div>
+            </div>
+            <div class="item" onclick="showButtons(0)">
+                <img src="./imgs/agency.jpg" alt="">
+                <div class="name">Nike</div>
+                <div class="price">#<span>5000</span></div>
+                <div class="buttons" id="buttons0">
+                    <button>View</button>
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="item" onclick="showButtons(1)">
+                <img src="./imgs/agency.jpg" alt="">
+                <div class="name">Nike</div>
+                <div class="price">#<span>5000</span></div>
+                <div class="buttons" id="buttons1">
+                    <button>View</button>
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="item" onclick="showButtons(2)">
+                <img src="./imgs/agency.jpg" alt="">
+                <div class="name">Nike</div>
+                <div class="price">#<span>5000</span></div>
+                <div class="buttons" id="buttons2">
+                    <button>View</button>
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="item" onclick="showButtons(3)">
+                <img src="./imgs/agency.jpg" alt="">
+                <div class="name">Nike</div>
+                <div class="price">#<span>5000</span></div>
+                <div class="buttons" id="buttons3">
+                    <button>View</button>
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="item" onclick="showButtons(4)">
+                <img src="./imgs/agency.jpg" alt="">
+                <div class="name">Nike</div>
+                <div class="price">#<span>5000</span></div>
+                <div class="buttons" id="buttons4">
+                    <button>View</button>
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="item" onclick="showButtons(5)">
+                <img src="./imgs/agency.jpg" alt="">
+                <div class="name">Nike</div>
+                <div class="price">#<span>5000</span></div>
+                <div class="buttons" id="buttons5">
+                    <button>View</button>
+                    <button>Remove</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <section>
+        <div class="innerSect">
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+            <div>
+                <img src="./imgs/button-shirts-logo.jpg" alt="">
+                <div class="cast"></div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+            </ul>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="item">
+                        <h4 class="text-uppercase">Contact us</h4>
+                        <p class="address">
+                            123 Second Street Fifth <br>
+                            Avenue,<br>
+                            Manhattan, New York<br>
+                            +987 654 3210
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="item">
+                        <h4 class="text-uppercase">additional links</h4>
+                        <ul>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="item date">
+                        <h4 class="text-uppercase">resent posts</h4>
+                        <p><a href="#">01/03/2019</a></p>
+                        <p><a href="#">08/05/2019</a></p>
+                        <p><a href="#">01/03/2019</a></p>
+                        <p><a href="#">08/05/2019</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="item">
+                        <h4 class="text-uppercase">newsletter</h4>
+                        <form>
+                            <input type="text" placeholder="Name">
+                            <input type="email" placeholder="Email">
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <p>Copyright 2019  Design by <a href="https://html.design">Free Html Templates</a></p>
+        </div>
+    </footer>
+    <script src="./js/productWindow.js"></script>
+</body>
+</html>
