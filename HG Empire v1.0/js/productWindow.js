@@ -1,3 +1,6 @@
+(()=>{
+    document.querySelector('.mainCont').style.transform = 'translateX(0%)'
+  })()
 function fashionChoice() {
     if (document.querySelector('.last-icon').querySelector('.slide').querySelector('.not-showing').style.transform == 'translate(75%, -100%)') {
         document.querySelector('.last-icon').querySelector('.slide').querySelector('.not-showing').style.transform = 'translate(75%, 0%)';
@@ -62,3 +65,5 @@ function fashionChoice() {
     image.style.backgroundSize = 'cover'
     image.style.backgroundPosition = 'center'
   })
+
+  

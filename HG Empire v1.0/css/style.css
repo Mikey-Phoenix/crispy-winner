@@ -632,6 +632,12 @@ header button:hover a {
 
 @media (max-width: 1200px) and (min-width: 768px){
     
+    /* header */
+
+    /* .header {
+        height: 100vh;
+    } */
+    
     /* about */
     
     .about-us .row > .col-lg-6:first-of-type {
@@ -708,6 +714,10 @@ header button:hover a {
         
         /* header */
         
+        header {
+            height: 100vh;
+        }
+
         header h1 {
             font-size: 65px !important;
         } 
@@ -715,15 +725,26 @@ header button:hover a {
         /* navbar */
         
         .navbar ul {
-            background-color: rgba(218, 165, 32, 0.7);
-        }
-        .navbar ul li {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            flex-direction: row !important;
+       }
+       .navbar ul li {
+            font-weight: bold;
             margin: 10px 0;
-        }
-        nav.navbar form {
+            text-shadow: 2px 2px 0px black !important;
+       }
+       nav.navbar form {
             width: 100%;
             position: static;
-        }
+       }
+       nav.navbar .container button {
+            color: green !important;
+            opacity: 1 !important;
+            /* border: 2px solid rgb(2, 196, 2); */
+            background-color: darkred;
+       }
         
         /* about */
         
@@ -793,10 +814,47 @@ header button:hover a {
 
 @media (max-width: 768px) {
     
+    /* navbar */
+
+    .navbar .container a.navbar-brand img {
+        width: 70px;
+        height: 70px;
+    }
+    .navbar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: row !important;
+   }
+   .navbar ul li {
+        font-weight: bold;
+        margin: 10px 0;
+        text-shadow: 2px 2px 0px black !important;
+   }
+   nav.navbar form {
+        width: 100%;
+        position: static;
+   }
+   nav.navbar .container button {
+        color: green !important;
+        opacity: 1 !important;
+        /* border: 2px solid rgb(2, 196, 2); */
+        background-color: darkred;
+   }
+
     /* header */
+    header {
+        max-height: 600px;
+    }
     header .container{
         padding-left: 10px;
         padding-right: 0%;
+    }
+    header .container div {
+        /* border: 1px solid red; */
+        position: static;
+        margin-top: 100px;
+        /* transform: translate(0%); */
     }
     header h1 {
         font-size: 40px !important;
@@ -804,8 +862,13 @@ header button:hover a {
     header h1 span.sub {
         font-size: 20px !important;
     }
+    header .container button {
+        background-color: rgb(2, 196, 2);
+        border-color: rgb(2, 196, 2);
+    }
     header .container button a {
         font-size: 10px;
+        color: white;
     }
     /* about */
     
@@ -825,17 +888,19 @@ header button:hover a {
     .services .carousel-control-next {
         /* display: none; */
         position: absolute;
-        right: 0%;
+        right: 10%;
         font-size: 8px;
         width: 30px;
         height: 30px;
+        opacity: 1;
     }
     .services .carousel-control-prev {
         position: absolute;
-        left: 0%;
+        left: 10%;
         font-size: 8px;
         width: 30px;
         height: 30px;
+        opacity: 1;
     }
     /* arrivals */
     
@@ -843,12 +908,18 @@ header button:hover a {
         width: 87%;
     }
     
+    .arrivals .white-overlay {
+        max-width: 600px;
+    }
+
     .arrivals .grid-container {
         grid-template-columns: auto;
     }
 
     .arrivals .grid-container > div {
         flex-direction: column;
+        max-width: 400px;
+        margin: auto;
     }
     .arrivals .grid-container > div .imgContainer {
         background-color: white;

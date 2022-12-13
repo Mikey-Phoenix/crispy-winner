@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HG Empire</title> 
-    <link rel="shortcut icon" href="./hg_favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/35b2c289c2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/product.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="shortcut icon" href="./hg_favicon/favicon-16x16.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/35b2c289c2.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light text-capitalize">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="./hg_favicon/LOGO.jpg" alt="#" width="100" height="100" style="border-radius: 50%;"/></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#show-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#show-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="navToggle()">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -65,8 +66,18 @@
     </header>
 
     <nav class="sub-nav">
-        <img src="./hg_favicon/LOGO.jpg" alt="" class="icon">
-        <div class="gender-selection filter">
+        <div class="megaCont">
+            <div class="mainCont">
+                <span>
+                    <p><span>Merry Christmas</span> and <span>a Happy New Year</span></p>
+                </span>
+                <div class="subCont">
+                    <p>From</p>
+                    <img src="./hg_favicon/LOGO.jpg" alt="" class="icon">
+                </div>
+            </div>
+        </div>
+        <!-- <div class="gender-selection filter">
             <div class="showing">
                 <div class="selection-item" onclick="option(0)">All</div>
             </div>
@@ -76,14 +87,10 @@
                 <div class="selection-item">Boys</div>
                 <div class="selection-item">Girls</div>
             </div>
-        </div>
-        <div class="search">
-            <input type="search" name="" id="search-bar" placeholder="Search items">
-            <label for="search-bar"><i class="fas fa-search"></i></label>
-        </div>
+        </div> -->
         <div class="color-selection filter">
             <div class="showing">
-                <div class="selection-item" onclick="option(1)">All</div>
+                <div class="selection-item" onclick="option(0)">All</div>
             </div>
             <div class="not-showing">
                 <div class="selection-item">White</div>
@@ -91,7 +98,12 @@
                 <div class="selection-item">Off-white</div>
             </div>
         </div>
-        <div class="last-icon">
+        <div class="search" id="searchCont">
+            <input type="search" name="" id="search-bar" placeholder="Search items" onfocus="focuser()" onblur="unfocuser()">
+            <label for="search-bar"><i class="fas fa-search"></i></label>
+        </div>
+        <div class="dropper" onclick="drop()">D</div>
+        <div class="last-icon" id="last">
             <div class="last-inner" onclick="fashionChoice()">
                 <div class="slide">
                     <div class="not-showing">

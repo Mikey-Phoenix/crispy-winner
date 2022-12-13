@@ -157,18 +157,89 @@ button {
     padding: 0
 }
 
+footer {
+    margin-top: 200vh;
+}
 
 
 .sub-nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* height: 50px; */
     padding: 10px 20px;
     padding-right: 250px;
     position: relative;
-    /* border: 1px solid red; */
     background-color: white;
+    z-index: 100000000000000;
+}
+.sub-nav .dropper {
+    position: absolute;
+    right: 5%;
+    padding: 10px;
+    display: none;
+}
+.sub-nav .megaCont {
+    height: fit-content;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.sub-nav .megaCont .mainCont {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all ease .3s;
+    transform: translateX(-85%);
+    overflow: hidden;
+}
+.sub-nav .megaCont .mainCont > span {
+    background-color: rgba(139, 0, 0, 0.266);
+    border-radius: 50px;
+}
+.sub-nav .megaCont .mainCont > span > p {
+    transition: all ease 3s;
+    padding: 1px 10px;
+    transform: translateX(100%) translateY(25%);
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+}
+@keyframes cycle {
+    0%{
+        transform: translateX(100%) translateY(25%);
+    }
+    100%{
+        transform: translateX(-100%) translateY(25%);
+    }
+}
+.sub-nav .megaCont .mainCont > span > p span:nth-child(1) {
+    font-style: italic;
+    font-weight: bold;
+    color: darkred;
+    text-shadow: 0px 0px 5px white;
+    /* font-family: cursive; */
+}
+.sub-nav .megaCont .mainCont > span > p span:nth-child(2) {
+    font-style: normal;
+    font-weight: bolder;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: yellow;
+    text-shadow: 0px 0px 5px darkred;
+}
+.sub-nav .megaCont .mainCont .subCont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 50px 0px 0px 50px;
+    height: 100%;
+    width: 120px;
+    position: absolute;
+    right: 0%;
+}
+.sub-nav .megaCont .mainCont .subCont p {
+    /* border: 1px solid brown; */
+    /* margin-top: 8px; */
+    margin-left: 10px;
+    transform: translateY(25%);
 }
 .icon{
     width: 40px;
@@ -439,7 +510,7 @@ nav .search .fa-search{
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 1150px) {
         
     /* header */
     
@@ -448,17 +519,25 @@ nav .search .fa-search{
     } 
     @media (min-height: 900px) {
         header {
-            height: 70vh;
+            height: 100vh;
         }
         header .container > div {
             bottom: 30%;
         }
     }
     /* navbar */
-    
+
+    .navbar #show-menu {
+        overflow-y: hidden;
+    }
     .navbar ul {
-        display: none;
-        /* background-color: rgba(218, 165, 32, 0.7); */
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        transform: translateY(-1000%);
+        transition: all ease .3s;
     }
     .navbar ul li {
         margin: 10px 0;
@@ -468,18 +547,99 @@ nav .search .fa-search{
         position: static;
     }
 
+    .sub-nav {
+        padding-right: 150px;
+    }
+    .sub-nav .megaCont .mainCont > span {
+        width: 300px !important;
+    }
+    .sub-nav .megaCont .mainCont > span p {
+        width: 400px !important;
+    }
     .sub-nav .filter .showing {
         font-size: 15px;
+        width: 100px;
+        /* border: 1px solid black; */
     }
     .sub-nav .filter .not-showing {
         font-size: 15px;
     }
+    .sub-nav .search {
+        border: 0px !important;
+        /* border: 2px solid black !important; */
+        z-index: +10000 !important;
+    }
     .sub-nav input[type="search"] {
+        width: 0px;
+        transition: all ease .4s;
+    }
+    .sub-nav input[type="search"]:focus {
         width: 200px;
+        z-index: 100;
     }
     
     footer .col-lg-3 {
         margin-bottom: 40px;
     }
-    
+    @media (max-width: 768px) {
+
+        nav .container a img{
+            width: 50px;
+            height: 50px;
+        }
+
+
+        header .container {
+            padding: 10px;
+        }
+        header .container > div {
+            width: 95%;
+            margin: auto;
+            transform: translateY(15%);
+
+        }
+        header .container > div h1 >span {
+            font-size: 40px;
+        }
+        header .container > div h1 span.sub {
+            font-size: 20px;
+        }
+
+
+        .sub-nav {
+            padding-right: 10%;
+        }
+        .sub-nav .megaCont .mainCont {
+            border-radius: 50px;
+        }
+        .sub-nav .megaCont .mainCont > span p {
+            font-size: 15px;
+        }
+        .sub-nav .megaCont .mainCont .subCont {
+            width: 45px;
+            padding: 0% !important;
+        }
+        .sub-nav .megaCont .mainCont .subCont p {
+            display: none;
+        }
+        .sub-nav input[type="search"]:focus {
+            width: 170px;
+        }
+        .sub-nav .dropper {
+            display: block;
+        }
+        .sub-nav .last-icon {
+            /* display: none; */
+            top: 30%;
+            right: 5%;
+            flex-direction: column-reverse;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 0px;
+            /* width: 0px; */
+            /* border: 1px solid red; */
+            background-color: white;
+            transition: all ease .3s;
+        }
+    }
 }
