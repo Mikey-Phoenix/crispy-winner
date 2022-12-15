@@ -36,6 +36,32 @@ function fashionChoice() {
       }
   }
 
+  const divo = document.querySelectorAll('.not-showing').item(0).querySelectorAll('.selection-item');
+  const diva = document.querySelectorAll('.not-showing').item(1).querySelectorAll('span');
+
+
+  divo.forEach((div)=>{
+    div.addEventListener('click', swap)
+    function swap() {
+      let showing = document.querySelectorAll('.showing').item(0).querySelector('div');
+      let tempo = showing.innerHTML;
+      showing.innerHTML = div.innerHTML;
+      showing.removeEventListener('click', option);
+      div.innerHTML = tempo;
+    }
+  })
+  diva.forEach((div)=>{
+      // console.log(div);
+    div.addEventListener('click', swap)
+    function swap() {
+      let showing = document.querySelectorAll('.showing').item(1).querySelector('span');
+      let tempo = showing.innerHTML;
+      showing.innerHTML = div.innerHTML;
+      showing.removeEventListener('click', option);
+      div.innerHTML = tempo;
+    }
+  })
+
   function showButtons(nah) {
     Array.from(document.querySelectorAll('.buttons')).forEach(button => {
         button.style.transform = 'translateY(-110%)';
@@ -52,18 +78,62 @@ function fashionChoice() {
   }
 
   const image = document.querySelector('.productViewContainer').querySelector('.imageHolder');
-  image.addEventListener('mousemove', (e)=>{
-    image.style.backgroundSize = '900px'
-    let x = e.clientX/5;
-    let y = e.clientY/5;
-    console.log(x, y);
-    image.style.backgroundPositionX = x + '%';
-    image.style.backgroundPositionY = y + '%';
-
-  })
-  image.addEventListener('mouseout', ()=>{
-    image.style.backgroundSize = 'cover'
-    image.style.backgroundPosition = 'center'
-  })
-
+  if (window.innerWidth >= 768) {
+    image.addEventListener('mousemove', (e)=>{
+      image.style.backgroundSize = '900px'
+      let x = e.clientX/5;
+      let y = e.clientY/5;
+      console.log(x, y);
+      image.style.backgroundPositionX = x + '%';
+      image.style.backgroundPositionY = y + '%';
   
+    })
+    image.addEventListener('mouseout', ()=>{
+      image.style.backgroundSize = 'cover'
+      image.style.backgroundPosition = 'center'
+    })
+  }
+
+
+  for (let i = 0; i < 24; i++) {
+    let innerSectCont = document.createElement('div');
+    innerSectCont.classList.add('innerSectCont');
+    innerSectCont.innerHTML = `
+    <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
+    <div class="name producter">Product</div>
+    `
+    document.querySelector('.innerSect').appendChild(innerSectCont);
+    innerSectCont.addEventListener('mouseenter', (e)=>{
+        e.path[0].children[1].style.top = '70%';
+        e.path[0].style.borderTop = '2px solid rgba(2, 196, 2, 1)';
+        e.path[0].style.borderBottom = '2px solid rgba(2, 196, 2, 1)';
+    })
+    innerSectCont.addEventListener('mouseleave', (e)=>{
+        e.path[0].children[1].style.top = '100%';
+        e.path[0].style.borderTop = '0px solid rgba(2, 196, 2, 1)';
+        e.path[0].style.borderBottom = '0px solid rgba(2, 196, 2, 1)';
+    })
+    
+  }
+
+  function drop() {
+    if (document.querySelector('.last-icon').style.height == '0px') {
+      document.querySelector('.last-icon').style.height = '150px';
+    } else {
+      document.querySelector('.last-icon').style.height = '0px'
+    }
+  }
+  function focuser() {
+    document.querySelector('#searchCont').style.cssText = 'border: 2px solid darkred !important;'
+    if (window.innerWidth <= '768') {
+      document.querySelector('.mainCont').style.transform = 'translateX(-60%)';
+      document.querySelector('.color-selection').style.display = 'none';
+    }
+  }
+  function unfocuser() {
+    document.querySelector('#searchCont').style.cssText = 'border: 0px solid darkred !important;'
+    document.querySelector('.color-selection').style.display = 'block';
+    if (window.innerWidth <= '768') {
+      document.querySelector('.mainCont').style.transform = 'translateX(0%)';
+    }
+  }

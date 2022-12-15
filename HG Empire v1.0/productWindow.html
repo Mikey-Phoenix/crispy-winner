@@ -26,24 +26,9 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="gender-selection filter">
-            <div class="showing">
-                <div class="selection-item" onclick="option(0)">All</div>
-            </div>
-            <div class="not-showing">
-                <div class="selection-item">Men</div>
-                <div class="selection-item">Women</div>
-                <div class="selection-item">Boys</div>
-                <div class="selection-item">Girls</div>
-            </div>
-        </div> -->
-        <div class="search">
-            <input type="search" name="" id="search-bar" placeholder="Search items">
-            <label for="search-bar"><i class="fas fa-search"></i></label>
-        </div>
         <div class="color-selection filter">
             <div class="showing">
-                <div class="selection-item" onclick="option(1)">All</div>
+                <div class="selection-item" onclick="option(0)">All</div>
             </div>
             <div class="not-showing">
                 <div class="selection-item">White</div>
@@ -51,6 +36,11 @@
                 <div class="selection-item">Off-white</div>
             </div>
         </div>
+        <div class="search" id="searchCont">
+            <input type="search" name="" id="search-bar" placeholder="Search items" onfocus="focuser()" onblur="unfocuser()">
+            <label for="search-bar"><i class="fas fa-search"></i></label>
+        </div>
+        <div class="dropper" onclick="drop()">D</div>
         <div class="last-icon">
             <div class="last-inner" onclick="fashionChoice()">
                 <div class="slide">
@@ -82,37 +72,37 @@
                     <h2>Name</h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam nobis unde a inventore dolorum, amet dolorem, optio est enim, ab accusantium? In quaerat odio nulla unde autem ea. Pariatur, quis!</p>
                     <div>
-                        <del>#<span>1000</span></del>
-                        <p>#<span>999.99</span></p>
+                        <del style=" color: darkred;">#<span style="border-bottom: 1px solid darkred;">1000</span></del>
+                        <p style=" color: rgba(2, 196, 2, 1);">#<span style="border-bottom: 1px solid rgba(2, 196, 2, 1);">999.99</span></p>
                     </div>
                 </div>
                 <div class="options">
                     <div class="option">
-                        <img src="./imgs/shoe-icon-2.png" alt="">
+                        <img src="./imgs/IMG-20221109-WA0007.jpg" alt="">
                         <div class="cast">
                             <div class="circlular"></div>
                         </div>
                     </div>
                     <div class="option">
-                        <img src="./imgs/shoe-icon-2.png" alt="">
+                        <img src="./imgs/IMG-20221109-WA0007.jpg" alt="">
                         <div class="cast">
                             <div class="circlular"></div>
                         </div>
                     </div>
                     <div class="option">
-                        <img src="./imgs/shoe-icon-2.png" alt="">
+                        <img src="./imgs/IMG-20221109-WA0007.jpg" alt="">
                         <div class="cast">
                             <div class="circlular"></div>
                         </div>
                     </div>
                     <div class="option">
-                        <img src="./imgs/shoe-icon-2.png" alt="">
+                        <img src="./imgs/IMG-20221109-WA0007.jpg" alt="">
                         <div class="cast">
                             <div class="circlular"></div>
                         </div>
                     </div>
                     <div class="option">
-                        <img src="./imgs/shoe-icon-2.png" alt="">
+                        <img src="./imgs/IMG-20221109-WA0007.jpg" alt="">
                         <div class="cast">
                             <div class="circlular"></div>
                         </div>
@@ -186,130 +176,155 @@
 
     <section>
         <div class="innerSect">
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <!-- <div onmouseenter="slideup(0)" onmouseleave="slidedown(0)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(1)" onmouseleave="slidedown(1)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(2)" onmouseleave="slidedown(2)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(3)" onmouseleave="slidedown(3)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(4)" onmouseleave="slidedown(4)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(5)" onmouseleave="slidedown(5)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(6)" onmouseleave="slidedown(6)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(7)" onmouseleave="slidedown(7)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(8)" onmouseleave="slidedown(8)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(9)" onmouseleave="slidedown(9)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(10)" onmouseleave="slidedown(10)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(11)" onmouseleave="slidedown(11)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(12)" onmouseleave="slidedown(12)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(13)" onmouseleave="slidedown(13)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(14)" onmouseleave="slidedown(14)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(15)" onmouseleave="slidedown(15)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(16)" onmouseleave="slidedown(16)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(17)" onmouseleave="slidedown(17)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(18)" onmouseleave="slidedown(18)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(19)" onmouseleave="slidedown(19)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(20)" onmouseleave="slidedown(20)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(21)" onmouseleave="slidedown(21)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(22)" onmouseleave="slidedown(22)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(23)" onmouseleave="slidedown(23)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
+                <div class="name producter">Product</div>
             </div>
 
-            <div>
-                <img src="./imgs/button-shirts-logo.jpg" alt="">
+            <div onmouseenter="slideup(24)" onmouseleave="slidedown(24)" class="innerSectCont">
+                <img src="./imgs/IMG-20221109-WA0008.jpg" alt="">
                 <div class="cast"></div>
-            </div>
+                <div class="name producter">Product</div>
+            </div> -->
 
         </div>
     </section>

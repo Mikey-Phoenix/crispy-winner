@@ -394,26 +394,47 @@ nav .search .fa-search{
 }
 .inner-view .items {
     width: 90% !important;
+    overflow-x: hidden;
     /* margin-top: ; */
 }
-.inner-view .item {
-    /* padding: 10px; */
-    padding-left: 10px;
+.inner-view .delete {
+    padding: 0px 10px;
     height: 60px;
-    /* background-color: rgba(139, 0, 0, 0.548); */
-    background-color: rgba(2, 196, 2, 0.452);
+    width: 100%;
+    color: white;
+    background-color: darkred;
     border-radius: 50px;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
-    margin: 20px 0px;
-    position: relative;
+    justify-content: space-between;
+    position: absolute;
+    left: 0%;
     cursor: pointer;
     text-decoration: none;
     transition: all ease .3s;
+    z-index: 0;
+}
+.inner-view .itemCont {
+    position: relative;
+    height: 60px;
+    /* border: 1px solid black; */
+    margin: 20px 0px;
+}
+.inner-view .item {
+    padding-left: 10px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(2, 196, 2, 1);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* left: 10%; */
+    cursor: pointer;
+    text-decoration: none;
+    transition: all ease .8s;
 }
 .inner-view .item:hover {
-    transform: translateY(-5%);
     box-shadow: 0px 0px 5px rgb(55, 55, 58);
 }
 .inner-view .item img {
@@ -448,6 +469,14 @@ nav .search .fa-search{
     color: black;
     font-size: 30px;
     transition: all ease .3s;
+}
+.cart-view .inner-view button {
+    border-width: 0px;
+    border-radius: 50px;
+    background-color: darkred;
+    color: white;
+    padding: 5px 10px;
+    display: none;
 }
 
 @keyframes fadeDown {
@@ -581,6 +610,11 @@ nav .search .fa-search{
     footer .col-lg-3 {
         margin-bottom: 40px;
     }
+    @media (max-width: 950px) {
+        .cart-view .inner-view button {
+            display: block;
+        }
+    }
     @media (max-width: 768px) {
 
         nav .container a img{
@@ -640,6 +674,13 @@ nav .search .fa-search{
             /* border: 1px solid red; */
             background-color: white;
             transition: all ease .3s;
+        }
+
+        .cart-view .inner-view {
+            width: 100%;
+        }
+        .cart-view .inner-view .itemCont .name {
+            font-size: 20px;
         }
     }
 }

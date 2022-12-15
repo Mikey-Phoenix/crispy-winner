@@ -25,7 +25,6 @@ window.addEventListener('scroll', ()=>{
 
 
 
-console.log('products');
 // const divs = document.querySelectorAll('.not-showing').item(0).querySelectorAll('.selection-item');
 const divo = document.querySelectorAll('.not-showing').item(0).querySelectorAll('.selection-item');
 const diva = document.querySelectorAll('.not-showing').item(1).querySelectorAll('span');
@@ -161,3 +160,86 @@ function option(a) {
       document.querySelector('#show-menu').querySelector('ul').style.transform = 'translateY(-1000%)'
     }
   }
+  var dragValue, x;
+  function move() {
+    let arr = Array.from(document.querySelectorAll('.item'))
+    for (let a = 0; a < arr.length; a++) {
+      if (window.innerWidth <= 900) {
+        console.log('smaller');
+        // arr[a].addEventListener('click', (e)=>{
+        //   dragValue = arr[a];
+        //   let arry = document.querySelectorAll('.item');
+        //   arry.forEach(ary=>{
+        //     ary.style.transform = 'translateX(0%)'
+        //   })
+        //   dragValue.style.transform = `translateX(-10%)`;
+        // })
+      } else {
+        arr[a].onmousedown = function() {
+          dragValue = arr[a]
+          document.querySelectorAll('.itemCont')[a].onmousemove = function(e) {
+            x = e.movementX;
+            
+            if (x >= 17 ) {
+              x = 18
+              e.path[0].children[0].style.opacity = 1;
+            } else if (x <= -17) {
+              x = -18 
+              e.path[0].children[0].style.opacity = 1;
+            } else if (x == 0) {
+              e.path[0].children[0].style.opacity = 0;
+            }
+            console.log(x);
+            dragValue.style.transform = `translateX(${x}%)`;
+          }
+          document.querySelectorAll('.itemCont')[a].onmouseleave = function (e) {
+            if(x > 17){
+              dragValue.style.transform = `translateX(${200}%)`;
+              e.path[0].children[0].style.opacity = 0;
+              setTimeout(() => {
+                e.path[0].style.display = 'none';
+                dragValue.style.display = 'none';
+              }, 500);
+              dragValue = null;
+            } else if (x < -17) {
+              dragValue.style.transform = `translateX(-${200}%)`;
+              e.path[0].children[0].style.opacity = 0;
+              setTimeout(() => {
+                e.path[0].style.display = 'none';
+                dragValue.style.display = 'none';
+              }, 500);
+              dragValue = null;
+            } else {
+              dragValue.style.transform = `translateX(${0}%)`;
+              dragValue = null;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  let dels = document.querySelectorAll('.delete')
+  dels.forEach(del=>{
+    del.addEventListener('click', (e)=>{
+      console.log(e.path[3]);
+      e.path[3].children[1].style.transform = 'translateX(-200%)';
+      e.path[2].style.opacity = 0;
+      setTimeout(() => {
+        e.path[3].style.display = 'none';
+        e.path[3].children[1].style.transform = 'translateX(0%)';
+      }, 500);
+    })
+  })
+
+  const remover = document.querySelector('#remover');
+  remover.addEventListener('click', ()=>{
+    let arr = Array.from(document.querySelectorAll('.item'));
+    arr.forEach((ar)=>{
+      if (ar.style.transform == `translateX(-10%)`) {
+        ar.style.transform = `translateX(0%)`
+      } else {
+        ar.style.transform = `translateX(-10%)`
+      }
+    })
+  })
