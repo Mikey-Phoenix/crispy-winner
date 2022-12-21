@@ -443,9 +443,18 @@ nav .search .fa-search{
     margin-right: 20px;
     border-radius: 50%;
 }
+.inner-view .item .nameCont {
+    max-width: 50%;
+    overflow-x: scroll;
+    /* border: 1px solid red; */
+}
+.inner-view .item .nameCont::-webkit-scrollbar {
+    height: 0px;
+}
 .inner-view .item .name {
     font-weight: bold;
     font-size: 25px;
+    width: 1200px;
 }
 .inner-view .item .price {
     font-weight: bold;

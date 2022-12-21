@@ -225,10 +225,12 @@ nav .search .fa-search{
 
 main {
     margin-top: 100px;
+    /* margin-bottom: 300px; */
     display: grid !important;
     grid-template-columns: 3fr 1.1fr;
     width: 100%;
     height: 100vh;
+    /* border: 1px solid black; */
     /* padding: 20px; */
 }
 
@@ -238,6 +240,7 @@ main > div {
 
 main .productViewContainer {
     display: flex;
+    overflow-y: hidden;
     justify-content: space-evenly;
     background-color: white;
     border-radius: 10px;
@@ -393,9 +396,18 @@ main .productViewContainer .innerCont .options .option .cast:hover {
     margin-right: 20px;
     border-radius: 50%;
 }
+.cartSide .item .nameCont {
+    max-width: 40%;
+    overflow-x: scroll;
+}
+.cartSide .item .nameCont::-webkit-scrollbar{
+    height: 0% !important;
+}
 .cartSide .item .name {
     font-weight: bold;
     font-size: 25px;
+    /* border: 1px solid greenyellow; */
+    width: 2000px !important;
 }
 .cartSide .item .price {
     font-weight: bold;
@@ -420,8 +432,8 @@ main .productViewContainer .innerCont .options .option .cast:hover {
 }
 .cartSide .item .buttons button {
     border: 0px;
-    width: 100px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     /* border: 2px solid rgba(2, 196, 2, 1); */
     border-radius: 50px;
     background-color: rgba(2, 196, 2, 1);
@@ -430,6 +442,15 @@ main .productViewContainer .innerCont .options .option .cast:hover {
 }
 .cartSide .item .buttons button:nth-child(2) {
     background-color: darkred;
+}
+.cartSide .item .itemCast {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    /* background-color: blue; */
+    border-radius: inherit;
 }
 
 section {

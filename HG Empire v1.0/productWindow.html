@@ -62,11 +62,11 @@
 
 
     <main>
-        <div class="productViewContainer">
+        <div class="productViewContainer" id="1">
             <div class="imageHolder">
                 <!-- <img src="./imgs/img1.jpg" alt=""> -->
             </div>
-            <button>Add To Cart</button>
+            <button id="cartbtn">Add To Cart</button>
             <div class="innerCont">
                 <div class="words">
                     <h2>Name</h2>
@@ -113,10 +113,13 @@
         <div class="cartSide">
             <h2>Your Cart</h2>
             <div class="totalCont">
-                <div>Amount: # <span>20000</span></div>
-                <div><span>6</span> items in cart</div>
+                <div>Amount: # <span id="money">0.00</span></div>
+                <div><span id="number">0</span> items in cart</div>
             </div>
-            <div class="item" onclick="showButtons(0)">
+            <div class="itemCont">
+
+            </div>   
+            <!-- <div class="item" onclick="showButtons(0)">
                 <img src="./imgs/agency.jpg" alt="">
                 <div class="name">Nike</div>
                 <div class="price">#<span>5000</span></div>
@@ -169,7 +172,8 @@
                     <button>View</button>
                     <button>Remove</button>
                 </div>
-            </div>
+            </div> -->
+
         </div>
     </main>
 

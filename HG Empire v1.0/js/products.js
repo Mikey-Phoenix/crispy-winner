@@ -1,5 +1,32 @@
+(()=>{
+  const items = document.querySelector('.items');
+  items.innerHTML = '';
+  let tempy = JSON.parse(localStorage.getItem('cart-items'));
+  console.log(tempy);
+  let fowl = [];
+  for (let i = 1; i < tempy.length; i++) {
+    fowl.push(tempy[i]);
+  }
+  fowl.forEach(owl=>{
+    let item = document.createElement('div');
+    item.classList.add('itemCont');
+    item.innerHTML = `
+    <div class="delete"><span><i class="fa-solid fa-trash"></i></span><span><i class="fa-solid fa-trash"></i></span></div>
+    <abbr title="click to view" class="item">
+        <img src="${owl.image}" alt="">
+        <div class="nameCont">
+          <div class="name">${owl.name}</div>
+        </div>
+        <div class="price">#<span>${owl.newPrice}</span></div>
+    </abbr>`
+    items.appendChild(item)
+  })
+})()
 
 let height = window.innerHeight;
+
+
+
 
 window.addEventListener('scroll', ()=>{
     const scrolled = window.scrollY;
