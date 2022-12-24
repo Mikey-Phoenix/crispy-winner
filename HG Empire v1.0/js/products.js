@@ -27,6 +27,22 @@ let height = window.innerHeight;
 
 
 
+function filterlist() {
+  const searchInput =  document.querySelector('#search-bar');
+  const filter = searchInput.value.toLowerCase();
+  const listItems = JSON.parse(localStorage.getItem('cart-items'));
+
+  listItems.forEach((item)=>{
+      let text = item.textContent
+      if (text.toLowerCase().includes(filter.toLowerCase())) {
+          item.style.display = '';
+      } else {
+          item.style.display = 'none';
+      };
+  });
+};
+
+
 
 window.addEventListener('scroll', ()=>{
     const scrolled = window.scrollY;
@@ -193,14 +209,6 @@ function option(a) {
     for (let a = 0; a < arr.length; a++) {
       if (window.innerWidth <= 900) {
         console.log('smaller');
-        // arr[a].addEventListener('click', (e)=>{
-        //   dragValue = arr[a];
-        //   let arry = document.querySelectorAll('.item');
-        //   arry.forEach(ary=>{
-        //     ary.style.transform = 'translateX(0%)'
-        //   })
-        //   dragValue.style.transform = `translateX(-10%)`;
-        // })
       } else {
         arr[a].onmousedown = function() {
           dragValue = arr[a]
@@ -270,3 +278,123 @@ function option(a) {
       }
     })
   })
+  let transactID;
+  let reciept;
+   let carting = JSON.parse(localStorage.getItem('cart-items'));
+
+
+    let totally = 0;
+
+    for (let i = 1; i < carting.length; i++) {
+      let cart = carting[i]; 
+      reciept = `${reciept}
+      ${cart.name}_________${cart.newPrice}`
+      totally = totally + parseFloat(cart.newPrice);
+    }
+
+    // console.log(reciept);
+
+  reciept = `${reciept}
+  
+  Total: $${totally.toFixed(2)}`;
+
+  const checkout = document.querySelector('#checkout');
+  checkout.addEventListener('click', ()=>{
+    let time = new Date();
+    let carty = JSON.parse(localStorage.getItem('cart-items'))
+    for (let i = 1; i < carty.length; i++) {
+      if (carty[i].newPrice >= carty[i-0].newPrice) {
+        let text = carty[i].name;
+        let halftext = text.charAt(0) + text.charAt(1) + text.charAt(2) + text.charAt(3) + text.charAt(4) + text.charAt(5) + text.charAt(6)
+        transactID = halftext + '/' + carty[i].newPrice + '/' + time.getDate() + '/' + time.getHours() + '/' + time.getMinutes()
+      }
+    }
+    console.log(transactID);
+    document.querySelector('#idHolder').innerText = transactID;
+    document.querySelector('.transact-view').style.display = 'flex';
+    reciept = `TransactID: ${transactID}
+    ${reciept}`;
+  })
+
+  function showGift() {
+    document.querySelector('.giftCont').style.display = 'flex';
+  }
+
+  let timerCont = [];
+  const opened = document.querySelector('.buy-time').querySelectorAll('span')[0];
+  const time = document.querySelector('.buy-time').querySelectorAll('span')[1];
+  const buy = document.querySelector('.buy-time').querySelectorAll('span')[2];
+  opened.addEventListener('click', (e)=>{
+    document.querySelectorAll('.none')[1].classList.remove('none');
+    e.target.classList.add('none');
+    timer();
+  });
+  buy.addEventListener('click', (e)=>{
+    document.querySelectorAll('.none')[1].classList.remove('none');
+    e.target.classList.add('none');
+  })
+
+  
+  function timer() {
+    let hrs = '23';
+    let mins = '59';
+    let secs = '00';
+    setInterval(() => {
+      if (localStorage.getItem('time') != null) {
+        timerCont = JSON.parse(localStorage.getItem('time'))
+        hrs = JSON.parse(localStorage.getItem('time'))[0];
+        mins = JSON.parse(localStorage.getItem('time'))[1];
+        secs = JSON.parse(localStorage.getItem('time'))[2];
+      } else {
+        timerCont = [hrs, mins, secs];
+        localStorage.setItem('time', JSON.stringify(timerCont))
+      }
+      if (secs == 00 && mins == 00 && hrs == 00) {
+        console.log('stop');
+        opened.classList.remove('none');
+        time.classList.add('none')
+      } else {
+        if (secs == 00) {
+          secs = 59;
+          if (mins <= 10) {
+            mins = '0' + (mins -1);
+          } else {
+            mins = mins - 1;
+          }
+          if (mins == 00) {
+            if (hrs <= 10) {
+              hrs = '0' + (hrs - 1);
+              
+            } else {
+              hrs = hrs - 1;
+            }
+            mins = 59;
+          }
+        } else if(secs <= 10) {
+          secs = '0' + (secs - 1);
+        } else {
+          secs = secs - 1;
+        }
+        timerCont = [hrs, mins, secs];
+      }
+      localStorage.setItem('time', JSON.stringify(timerCont))
+      time.innerHTML = hrs + ':' + mins + ':' + secs;
+    }, 1000);
+  }
+
+ 
+
+  function downloadFile() {
+    const blob = new Blob([reciept], { type: "csv" });
+    const href = URL.createObjectURL(blob);
+    const a = Object.assign(document.createElement('a'), {
+      href,
+      style: "display: none",
+      download: "HGreciept.csv",
+    });
+    document.body.appendChild(a);
+
+    a.click();
+    URL.revokeObjectURL(href);
+    a.remove();
+  }
